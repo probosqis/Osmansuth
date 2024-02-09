@@ -19,7 +19,7 @@ package com.wcaokaze.probosqis.r
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 
-class Strings {
+class StrRes {
    enum class Language {
       ENGLISH,
       JAPANESE,
@@ -30,4 +30,4 @@ class Strings {
 
 @Composable
 @ReadOnlyComposable
-internal expect fun language(): Strings.Language
+internal expect fun language(): StrRes.Language

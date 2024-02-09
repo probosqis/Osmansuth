@@ -22,13 +22,13 @@ import java.util.Locale
 
 @Composable
 @ReadOnlyComposable
-internal actual fun language(): Strings.Language {
+internal actual fun language(): StrRes.Language {
    val locale = Locale.getDefault(Locale.Category.DISPLAY)
    val languageRange = Locale.LanguageRange.parse(locale.toLanguageTag())
    val langTag = Locale.lookupTag(languageRange, langTagMap.keys)
-   return langTagMap[langTag] ?: Strings.Language.ENGLISH
+   return langTagMap[langTag] ?: StrRes.Language.ENGLISH
 }
 
 private val langTagMap = buildMap {
-   put("ja", Strings.Language.JAPANESE)
+   put("ja", StrRes.Language.JAPANESE)
 }

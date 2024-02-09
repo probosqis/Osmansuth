@@ -22,11 +22,11 @@ import androidx.compose.ui.res.stringResource
 
 @Composable
 @ReadOnlyComposable
-internal actual fun language(): Strings.Language {
+internal actual fun language(): StrRes.Language {
    val langTag = stringResource(R.string.lang_tag)
-   return langTagMap[langTag] ?: Strings.Language.ENGLISH
+   return langTagMap[langTag] ?: StrRes.Language.ENGLISH
 }
 
 private val langTagMap = buildMap {
-   put("ja", Strings.Language.JAPANESE)
+   put("ja", StrRes.Language.JAPANESE)
 }
