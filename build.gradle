@@ -85,7 +85,7 @@ kotlin {
 }
 
 android {
-   namespace 'com.wcaokaze.probosqis.r'
+   namespace 'com.wcaokaze.probosqis.osmansuth'
 
    compileSdk 34
 

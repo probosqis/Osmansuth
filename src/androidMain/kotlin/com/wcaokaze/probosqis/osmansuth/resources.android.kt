@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-package com.wcaokaze.probosqis.r
+package com.wcaokaze.probosqis.osmansuth
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
-
-class StrRes {
-   enum class Language {
-      ENGLISH,
-      JAPANESE,
-   }
-
-   companion object
-}
+import androidx.compose.ui.res.stringResource
 
 @Composable
 @ReadOnlyComposable
-internal expect fun language(): StrRes.Language
+internal actual fun language(): StrRes.Language {
+   val langTag = stringResource(R.string.lang_tag)
+   return langTagMap[langTag] ?: StrRes.Language.ENGLISH
+}
+
+private val langTagMap = buildMap {
+   put("ja", StrRes.Language.JAPANESE)
+}

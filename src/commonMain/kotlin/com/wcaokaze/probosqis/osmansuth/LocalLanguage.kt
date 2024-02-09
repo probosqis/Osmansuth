@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wcaokaze.probosqis.r
+package com.wcaokaze.probosqis.osmansuth
 
 import androidx.compose.runtime.staticCompositionLocalOf
 

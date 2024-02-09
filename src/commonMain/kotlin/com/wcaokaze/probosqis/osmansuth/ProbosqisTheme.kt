@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-package com.wcaokaze.probosqis.r
+package com.wcaokaze.probosqis.osmansuth
 
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.ui.res.stringResource
+import androidx.compose.runtime.CompositionLocalProvider
 
 @Composable
-@ReadOnlyComposable
-internal actual fun language(): StrRes.Language {
-   val langTag = stringResource(R.string.lang_tag)
-   return langTagMap[langTag] ?: StrRes.Language.ENGLISH
+fun ProbosqisTheme(
+   content: @Composable () -> Unit
+) {
+   CompositionLocalProvider(
+      LocalLanguage provides language(),
+   ) {
+      MaterialTheme(colorScheme()) {
+         content()
+      }
+   }
 }
 
-private val langTagMap = buildMap {
-   put("ja", StrRes.Language.JAPANESE)
-}
+@Composable
+expect fun colorScheme(): ColorScheme

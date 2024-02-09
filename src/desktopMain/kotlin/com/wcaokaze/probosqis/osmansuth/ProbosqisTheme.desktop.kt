@@ -14,25 +14,19 @@
  * limitations under the License.
  */
 
-package com.wcaokaze.probosqis.r
+package com.wcaokaze.probosqis.osmansuth
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 
 @Composable
-fun ProbosqisTheme(
-   content: @Composable () -> Unit
-) {
-   CompositionLocalProvider(
-      LocalLanguage provides language(),
-   ) {
-      MaterialTheme(colorScheme()) {
-         content()
-      }
+actual fun colorScheme(): ColorScheme {
+   return if (isSystemInDarkTheme()) {
+      darkColorScheme()
+   } else {
+      lightColorScheme()
    }
 }
-
-@Composable
-expect fun colorScheme(): ColorScheme
