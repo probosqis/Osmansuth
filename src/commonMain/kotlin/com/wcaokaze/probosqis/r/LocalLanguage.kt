@@ -18,4 +18,4 @@ package com.wcaokaze.probosqis.r
 
 import androidx.compose.runtime.staticCompositionLocalOf
 
-val LocalLanguage = staticCompositionLocalOf { Strings.Language.ENGLISH }
+val LocalLanguage = staticCompositionLocalOf { StrRes.Language.ENGLISH }
